@@ -1,0 +1,502 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { gsap } from 'gsap';
+// import anime from "animejs/lib/anime.es.js";
+import { TweenMax, Power2, TimelineLite } from 'gsap';
+---
+
+<MainLayout title='About' description='abou about'>
+  <div class='container'>
+    <div class='left column'>
+      <div class='header'>
+        <p>boundary supply /</p>
+        <p>
+          better than brand new second hand clothing / focus by sick apparel
+          everyday,
+        </p>
+        <p>home of (23-29)</p>
+      </div>
+      <div class='link'><a href='#'>all products</a></div>
+    </div>
+    <div class='right column'>
+      <div class='images'>
+        <div class='img-1 img'></div>
+        <div class='img-2 img'></div>
+        <div class='img-3 img'></div>
+        <div class='img-4 img'></div>
+      </div>
+      <div class='header'>
+        <h1 class='ml12'>gorgeoushe</h1>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .column {
+      width: 50%;
+      height: 100vh;
+    }
+
+    .left {
+      position: relative;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url('../images/background-image.png');
+
+      background-size: cover;
+      padding: 20px;
+    }
+
+    .right {
+      display: flex;
+      padding: 120px 0;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .img {
+      width: 160px;
+      height: 200px;
+      margin: 6px;
+    }
+
+    .img-1 {
+      background-image: url('../images/background-image.png');
+      background-size: cover;
+    }
+
+    .img-2 {
+      background-image: url('../images/background-image.png');
+      background-size: cover;
+    }
+
+    .img-3 {
+      background-image: url('../images/background-image.png');
+      background-size: cover;
+    }
+
+    .img-4 {
+      background-image: url('../images/background-image.png');
+      background-size: cover;
+    }
+
+    .header {
+      color: #a77a3f;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+
+    .header h1 {
+      position: relative;
+    }
+
+    .ml12 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+    .link a {
+      color: red;
+      text-transform: uppercase;
+      font-size: 40px;
+      font-family: 'Neutral Face';
+    }
+
+    @media (min-width: 900px) {
+      .container {
+        display: flex;
+      }
+
+      .images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .column {
+        width: 100%;
+      }
+
+      .img {
+        width: 400px;
+        height: 400px;
+      }
+
+      .header {
+        font-size: 20px;
+        padding: 80px 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml12');
+    textWrapper.innerHTML = textWrapper.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>"
+    );
+
+    anime.timeline().add({
+      targets: '.ml12 .letter',
+      translateY: [100, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 2000,
+      delay: (el, i) => 2000 + 60 * i,
+    });
+
+    TweenMax.from('.left', 3, {
+      left: '-50%',
+      ease: Expo.easeInOut,
+      delay: 3.4,
+    });
+    TweenMax.from('.header h1', 3, {
+      left: '-140%',
+      ease: Expo.easeInOut,
+      delay: 3.4,
+    });
+    TweenMax.staggerFrom(
+      '.images > div',
+      1,
+      {
+        y: '60',
+        opacity: 0,
+        ease: Power2.easeOut,
+        delay: 6,
+      },
+      0.2
+    );
+
+    TweenMax.staggerFrom(
+      '.header > p',
+      1,
+      {
+        y: '60',
+        opacity: 0,
+        ease: Power2.easeOut,
+        delay: 5.6,
+      },
+      0.2
+    );
+
+    TweenMax.from('.link', 1, {
+      opacity: 0,
+      ease: SteppedEase.config(1),
+      repeat: -1,
+      repeatDelay: 0.2,
+      delay: 7.8,
+    });
+  </script>
+</MainLayout>
+
+
+
+
+
+
+
+
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import src from '../images/background-image.png';
+---
+
+<MainLayout title='Main Page'>
+  <section class='section'>
+    <div class='container'>
+      <div class='hero-section'>
+        <div class='hero-section-col-left'>
+          <picture>
+            <img src='../images/background-image.png' alt='Flowers' />
+          </picture>
+        </div>
+        <div class='hero-section-col-right'>
+          <h2>ARBORIST / TREE SURGERY</h2>
+          <button>ENTER</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .section {
+    height: 85vh;
+    /* background-image: url(../images/background-image.png); */
+    background-size: cover;
+    background-position: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      height: 85vh;
+      width: 100%;
+    }
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .hero-section {
+    min-height: clamp(90vh, 100vw, calc(100vh - 10vh));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-section-col-left,
+  .hero-section-col-right {
+    justify-self: center;
+    min-width: 25rem;
+    padding: 100px;
+    background-color: rgba(49, 49, 49, 0.215);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <MainLayout title='Main Page'>
+  <section class='section'>
+    <div class='container'>
+      <div class='hero-section'>
+        <div class='hero-section-col-left'>
+          <h2>ROPE ACCESS</h2>
+          <button>ENTER</button>
+        </div>
+        <div class='hero-section-col-right'>
+          <h2>ARBORIST / TREE SURGERY</h2>
+          <button>ENTER</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .section {
+    height: 85vh;
+    background-image: url(../images/background-image.png);
+    background-size: cover;
+    background-position: center;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      height: 85vh;
+      width: 100%;
+    }
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-section {
+    min-height: clamp(90vh,100vw,calc(100vh - 10vh));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-section-col-left, .hero-section-col-right {
+    justify-self: center;
+    min-width: 25rem;
+    padding: 100px;
+    background-color: rgba(49, 49, 49, 0.215);
+
+
+  }
+</style> -->
+
+<!-- import MainLayout from '../layouts/MainLayout.astro';
+import src from '../images/background-image.png'; -->
+
+<!-- <MainLayout title='Main Page'>
+  <section     style={{
+		backgroundImage: `url(${src})`,
+		backgroundSize: "cover",
+	}}>
+		<div class='active'>
+			<h1>hello</h1>
+      <img src={src} alt='A local image in SSR mode' />
+     <img src='../images/background-image.png' alt="">
+      <p>main page</p>
+    </div>
+  </section>
+</MainLayout> -->
+
+<!-- .hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5rem;
+
+  .hero-section-col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+
+  .hero-section-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+} -->
+
+
+
+
+
+
+
+
+
+
+<!-- <MainLayout title='Main Page'>
+  <section class='section'>
+    <div class='container'>
+      <div class='hero-section'>
+        <div class='hero-section-col-left'>
+            <h2>ARBORIST / TREE SURGERY</h2>
+            <button>ENTER</button>
+        </div>
+        <div class='hero-section-col-right'>
+          <h2>ARBORIST / TREE SURGERY</h2>
+          <button>ENTER</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout> -->
+
+<!-- <style>
+  .section {
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      height: 85vh;
+      width: 100%;
+    }
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .hero-section {
+    min-height: clamp(90vh, 100vw, calc(100vh - 10vh));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-section-col-left,
+  .hero-section-col-right {
+    justify-self: center;
+    min-width: 25rem;
+    padding: 100px;
+    background-color: rgba(49, 49, 49, 0.215);
+  }
+</style>  -->

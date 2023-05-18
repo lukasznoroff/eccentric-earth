@@ -2,6 +2,9 @@
   "name": "eccentric-earth",
   "type": "module",
   "version": "0.0.1",
+  "browerslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,6 +13,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "animejs": "^3.2.1",
+    "astro": "^2.4.1",
+    "gsap": "^3.11.5",
+    "postcss": "^8.4.23",
+    "postcss-preset-env": "^8.3.2"
   }
 }

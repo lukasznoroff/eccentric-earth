@@ -1,0 +1,106 @@
+<footer class="footer">
+<div class="container">
+  <div class="column">
+    <p class="title">CONTACT INFO</p>
+    <ul>
+      <li>phone: 1231241124122</li>
+      <li>mobile: 324552523532</li>
+      <li>mobile: 453663436346</li>
+    </ul>
+  </div>
+  <div class="column">
+  <p class="title">WORKING HOURS</p>
+  <ul>
+    <li>Monday - Friday: 9am to 5pm</li>
+    <li>Saturday: 10am to 2pm</li>
+    <li>Sunday: closed</li>
+  </ul>
+  </div>
+  <div class="column">
+    <p class="title">LEGAL PAGES</p>
+    <ul>
+      <li>Trems & Conditions</li>
+      <li>Privacy Policy</li>
+      <li>Health & Safety Policy</li>
+    </ul>
+    </div>
+    <div class="column">
+      <p class="title">FOLLOW US</p>
+      <ul class="icons-container">
+        <li>
+          <img src="../images/icons8-instagram-48.png" alt="">
+        </li>
+        <li>
+          <img src="../images/icons8-facebook-48.png" alt="">
+        </li>
+        <li>
+          <img src="../images/icons8-twitter-squared-48.png" alt="">
+        </li>
+        <li>
+          <img src="../images/icons8-youtube-48.png" alt="">
+        </li>
+        <li>
+          <img src="../images/icons8-linkedin-48.png" alt="">
+        </li>
+       
+      </ul>
+      </div>
+</div>
+  
+  <small>
+    Copyrigth &copy; <span id='copyright'></span>
+    | All rights reserved
+  </small>
+</footer>
+
+
+<style>
+  .footer {
+    background-color: #7e807c;
+    /* height: 10vh; */
+    color: #d9d9d9;
+    padding: 10vh 0 1rem 0;
+   
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 2fr;
+    margin: 1rem 3rem;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      text-align:center;
+     
+    }
+  }
+
+  .icons-container {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    /* width: 50vw; */
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content:center;
+     
+    }
+  }
+
+  .title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  small {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+  }
+</style>
+
+<script>
+  const year = (document.getElementById('copyright').textContent = new Date()
+    .getFullYear()
+    .toString());
+  console.log(year);
+</script>
