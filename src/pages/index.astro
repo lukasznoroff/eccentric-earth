@@ -38,6 +38,9 @@ import Carousel from '../components/Carousel.astro';
   .section {
     /* height: 85vh; */
     margin: 3rem;
+    @media (max-width: 768px) {
+    margin: 0;
+    }
 
     /* &:after {
       content: '';
@@ -61,7 +64,7 @@ import Carousel from '../components/Carousel.astro';
     gap: 1rem;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      /* height: 100%; */
+     
     }
   }
   .columns {
@@ -69,6 +72,9 @@ import Carousel from '../components/Carousel.astro';
     min-width: 25rem;
     width: 100%;
     height: 100%;
+    @media (max-width: 768px) {
+     min-width: auto;
+    }
   }
 
   .image-wrapper {
@@ -132,6 +138,9 @@ import Carousel from '../components/Carousel.astro';
   width: 100%;
   height: 20px;
   /* background-color: #7e807c; */
+  @media (max-width: 768px) {
+     height: 40px;
+    }
 }
 
 .strap-1 {
@@ -148,6 +157,9 @@ import Carousel from '../components/Carousel.astro';
   margin-bottom: 5px;
   background-color: #7e807c6e;
   height: 4vw;
+  @media (max-width: 768px) {
+     height: 40px;
+    }
 }
 
 .cl-heading {
@@ -155,6 +167,12 @@ import Carousel from '../components/Carousel.astro';
   padding: 0.2vw 0;
   margin-left: 12px;
   color: #f2f0f0;
+  @media (max-width: 768px) {
+     font-size: 20px;
+     text-align: center;
+   
+    }
+  
 }
 
 </style>
